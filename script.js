@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    // Restrict phone input to digits only and max 10 digits
+    $('#Phone').on('input', function () {
+        let value = $(this).val().replace(/\D/g, ''); // Remove non-digits
+        if (value.length > 10) value = value.slice(0, 10); // Limit to 10 digits
+        $(this).val(value);
+    });
+
     $('#submit').click(function (e) {
         e.preventDefault(); // Prevent form submission
 
@@ -31,6 +38,13 @@ $(document).ready(function () {
             $('#error').text('Password must be at least 8 characters long and include uppercase, lowercase, and a number.');
             return;
         }
+
+        if (password !== $('#ConfirmPassword').val().trim()) {
+            $('#error').text('Passwords do not match.');
+            return;
+        }
+
+        // If all validations pass, proceed with form submission
 
         // Success
         $('#success').text('Form submitted successfully!');
