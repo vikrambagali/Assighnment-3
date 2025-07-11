@@ -15,6 +15,13 @@ input{
      margin-bottom: 10px;
     font-family: 'Courier New', Courier, monospace;
 }
+.Show {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  border-radius: 10px;
+}
 #submit{
     width: 130px;
     margin-left: 130px;
