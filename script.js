@@ -65,3 +65,11 @@ $(document).ready(function () {
         return regex.test(password);
     }
 });
+function passwordVisibility() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
