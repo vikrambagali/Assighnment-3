@@ -6,7 +6,7 @@ $(document).ready(function () {
         $(this).val(value);
     });
 
-    $('#submit').click(function (e) {
+    $('#submit').on("click", function (e) {
         e.preventDefault(); // Prevent form submission
 
         // Clear previous messages
@@ -66,7 +66,7 @@ $(document).ready(function () {
     }
 });
 function passwordVisibility() {
-  var x = document.getElementById("myInput");
+  var x = document.getElementById("Password");
   if (x.type === "password") {
     x.type = "text";
   } else {
